@@ -143,7 +143,8 @@ REST_FRAMEWORK = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://YOUR-FRONTEND-URL.onrender.com",
+    "http://localhost:5173",
+    "https://hospital-erp-frontend-n1x2.onrender.com",
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
