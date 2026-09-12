@@ -12,7 +12,7 @@ function ConsultedPatients() {
   const fetchPatients = async () => {
     try {
       const response = await axios.get(
-        "http://127.0.0.1:8000/api/consulted-patients/",
+        "https://hospital-erp-xoah.onrender.com/api/consulted-patients/",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("access")}`,

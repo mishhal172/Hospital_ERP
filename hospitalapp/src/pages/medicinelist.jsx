@@ -15,7 +15,7 @@ export default function Medicinelist() {
         try {
 
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/medicine/"
+                "https://hospital-erp-xoah.onrender.com/api/medicine/"
             );
 
             setMedicines(response.data);

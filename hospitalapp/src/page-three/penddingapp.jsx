@@ -18,7 +18,7 @@ function PendingAppointments() {
     const fetchAppointments = useCallback(async () => {
         try {
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/doctor/pending-appointments/",
+                "https://hospital-erp-xoah.onrender.com/api/doctor/pending-appointments/",
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -34,7 +34,7 @@ function PendingAppointments() {
     const fetchMedicines = useCallback(async () => {
         try {
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/medicine/consult/",
+                "https://hospital-erp-xoah.onrender.com/api/medicine/consult/",
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -56,7 +56,7 @@ function PendingAppointments() {
     const handleConsult = async (appointment) => {
         try {
             const response = await axios.get(
-                `http://127.0.0.1:8000/api/appointments/${appointment.id}/details/`,
+                `https://hospital-erp-xoah.onrender.com/api/appointments/${appointment.id}/details/`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("access")}`,
@@ -146,7 +146,7 @@ function PendingAppointments() {
 
         try {
             await axios.post(
-                "http://127.0.0.1:8000/api/prescriptions/create/",
+                "https://hospital-erp-xoah.onrender.com/api/prescriptions/create/",
                 {
                     appointment: selectedPatient.id,
                     symptoms: formData.symptoms,

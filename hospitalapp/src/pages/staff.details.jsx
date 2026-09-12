@@ -16,7 +16,7 @@ function StaffDetails() {
   const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/all-users/")
+    fetch("https://hospital-erp-xoah.onrender.com/api/all-users/")
       .then((res) => res.json())
       .then((data) => {
         setStaffs(data);
@@ -75,7 +75,7 @@ function StaffDetails() {
         dataPayload.append("profile_image", selectedFile);
       }
 
-      const response = await fetch(`http://127.0.0.1:8000/api/update-user/${id}/`, {
+      const response = await fetch(`https://hospital-erp-xoah.onrender.com/api/update-user/${id}/`, {
         method: "PUT",
         headers: {
           "Authorization": `Bearer ${token}`,
@@ -109,7 +109,7 @@ function StaffDetails() {
     if (!confirmDelete) return;
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/delete-user/${id}/`, {
+      const response = await fetch(`https://hospital-erp-xoah.onrender.com/api/delete-user/${id}/`, {
         method: "DELETE",
       });
       await response.json();
@@ -154,7 +154,7 @@ function StaffDetails() {
 
               <div className="staff-avatar-container" style={{ flexDirection: "column", gap: "10px" }}>
                 {staff.profile_image ? (
-                  <img  src={staff.profile_image.startsWith('http') ? staff.profile_image : `http://127.0.0.1:8000${staff.profile_image}`} alt={staff.full_name} className="staff-avatar-img" />
+                  <img  src={staff.profile_image.startsWith('http') ? staff.profile_image : `https://hospital-erp-xoah.onrender.com${staff.profile_image}`} alt={staff.full_name} className="staff-avatar-img" />
                 ) : (
                   <div className="staff-avatar-placeholder">{getInitials(staff.full_name)}</div>
                 )}

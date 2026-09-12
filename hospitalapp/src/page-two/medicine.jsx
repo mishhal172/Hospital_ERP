@@ -22,7 +22,7 @@ export default function MedicineManagement() {
         try {
             setLoading(true);
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/medicine/"
+                "https://hospital-erp-xoah.onrender.com/api/medicine/"
             );
             setMedicines(response.data);
         } catch (error) {
@@ -72,13 +72,13 @@ export default function MedicineManagement() {
         try {
             if (editId) {
                 await axios.put(
-                    `http://127.0.0.1:8000/api/update-medicine/${editId}/`,
+                    `https://hospital-erp-xoah.onrender.com/api/update-medicine/${editId}/`,
                     formData
                 );
                 setMessage("Medicine Updated Successfully");
             } else {
                 await axios.post(
-                    "http://127.0.0.1:8000/api/medicine/",
+                    "https://hospital-erp-xoah.onrender.com/api/medicine/",
                     formData
                 );
                 setMessage("Medicine Added Successfully");
@@ -107,7 +107,7 @@ export default function MedicineManagement() {
     const deleteMedicine = async (id) => {
         try {
             await axios.delete(
-                `http://127.0.0.1:8000/api/delete-medicine/${id}/`
+                `https://hospital-erp-xoah.onrender.com/api/delete-medicine/${id}/`
             );
             setMedicines(medicines.filter((medicine) => medicine.id !== id));
             setMessage("Medicine Deleted Successfully");
@@ -125,7 +125,7 @@ export default function MedicineManagement() {
 
         try {
             await axios.put(
-                `http://127.0.0.1:8000/api/update-medicine/${id}/`,
+                `https://hospital-erp-xoah.onrender.com/api/update-medicine/${id}/`,
                 {
                     ...medicine,
                     stock: newStock,

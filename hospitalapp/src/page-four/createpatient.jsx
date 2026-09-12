@@ -30,7 +30,7 @@ export default function CreatePatient() {
     try {
 
       await axios.post(
-        "http://127.0.0.1:8000/api/patients/",
+        "https://hospital-erp-xoah.onrender.com/api/patients/",
         formData
       );
 

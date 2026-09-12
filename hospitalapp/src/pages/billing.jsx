@@ -15,7 +15,7 @@ export default function SalesHistory() {
       if (toDate) params.to_date = toDate;
 
       const response = await axios.get(
-        "http://localhost:8000/api/all-bills/",
+        "https://hospital-erp-xoah.onrender.com/api/all-bills/",
         { params }
       );
 
@@ -33,7 +33,7 @@ export default function SalesHistory() {
     setToDate("");
 
     axios
-      .get("http://localhost:8000/api/all-bills/")
+      .get("https://hospital-erp-xoah.onrender.com/api/all-bills/")
       .then((res) => setBills(res.data))
       .catch((err) => console.error(err));
   };

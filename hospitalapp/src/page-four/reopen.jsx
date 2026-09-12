@@ -13,7 +13,7 @@ export default function ReopenConsultation() {
   const searchPatientHistory = async () => {
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/patient-history/?search=${search}`
+        `https://hospital-erp-xoah.onrender.com/api/patient-history/?search=${search}`
       );
       setAppointments(res.data);
     } catch (err) {
@@ -29,7 +29,7 @@ export default function ReopenConsultation() {
     }
     try {
       const res = await axios.post(
-        `http://127.0.0.1:8000/api/appointments/${selectedAppointment.id}/reopen/`,
+        `https://hospital-erp-xoah.onrender.com/api/appointments/${selectedAppointment.id}/reopen/`,
         {
           appointment_date: newDate,
           appointment_time: newTime,

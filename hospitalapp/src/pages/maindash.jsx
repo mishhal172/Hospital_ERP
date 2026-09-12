@@ -8,7 +8,7 @@ export default function Dashboard() {
     useEffect(() => {
 
         axios
-            .get("http://127.0.0.1:8000/api/dashboard/")
+            .get("https://hospital-erp-xoah.onrender.com/api/dashboard/")
             .then((res) => {
 
                 setDashboard(res.data);

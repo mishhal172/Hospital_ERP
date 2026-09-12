@@ -23,7 +23,7 @@ function CreateUser() {
   useEffect(() => {
     const fetchDepts = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/departments/");
+        const response = await fetch("https://hospital-erp-xoah.onrender.com/api/departments/");
         const data = await response.json();
         setDepartments(data);
       } catch (error) {
@@ -91,7 +91,7 @@ function CreateUser() {
       }
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/create-user/",
+        "https://hospital-erp-xoah.onrender.com/api/create-user/",
         {
           method: "POST",
           headers: {

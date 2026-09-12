@@ -8,7 +8,7 @@ function DoctorList() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/doctors/")
+      .get("https://hospital-erp-xoah.onrender.com/api/doctors/")
       .then((response) => {
         setDoctors(response.data);
         setLoading(false);
@@ -27,7 +27,7 @@ function DoctorList() {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/delete-doc/${id}/`);
+      await axios.delete(`https://hospital-erp-xoah.onrender.com/api/delete-doc/${id}/`);
       const updatedList = doctors.filter((doc) => doc.id !== id);
       setDoctors(updatedList);
       alert("Doctor Deleted Successfully");
@@ -63,7 +63,7 @@ function DoctorList() {
               <div className="doctor-avatar-container">
                 {doc.profile_image ? (
                   <img
-                    src={doc.profile_image.startsWith('http') ? doc.profile_image : `http://127.0.0.1:8000${doc.profile_image}`}
+                    src={doc.profile_image.startsWith('http') ? doc.profile_image : `https://hospital-erp-xoah.onrender.com${doc.profile_image}`}
                     alt={doc.full_name}
                     className="doctor-avatar-img"
                   />

@@ -9,7 +9,7 @@ function Appointment() {
 
   const fetchAppointments = useCallback(async () => {
     try {
-      let url = "http://127.0.0.1:8000/api/all-appointment/";
+      let url = "https://hospital-erp-xoah.onrender.com/api/all-appointment/";
 
       if (fromDate && toDate) {
         url += `?from_date=${fromDate}&to_date=${toDate}`;

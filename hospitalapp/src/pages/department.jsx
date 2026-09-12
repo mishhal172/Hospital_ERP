@@ -10,7 +10,7 @@ function Departments() {
     if (!window.confirm("Are you sure you want to delete this department?")) return;
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/delete-department/${id}/`, {
+      const response = await fetch(`https://hospital-erp-xoah.onrender.com/api/delete-department/${id}/`, {
         method: "DELETE",
       });
 
@@ -31,7 +31,7 @@ function Departments() {
   });
 
   const fetchDepartments = () => {
-    fetch("http://127.0.0.1:8000/api/departments/")
+    fetch("https://hospital-erp-xoah.onrender.com/api/departments/")
       .then((res) => res.json())
       .then((data) => setDepartments(data))
       .catch((err) => console.error("Error fetching departments:", err));
@@ -62,7 +62,7 @@ function Departments() {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/departments/", {
+      const response = await fetch("https://hospital-erp-xoah.onrender.com/api/departments/", {
         method: "POST",
         body: data,
       });
@@ -121,7 +121,7 @@ function Departments() {
         {departments.map((department) => (
           <div className="departments-card" key={department.id}>
             <img
-              src={`http://127.0.0.1:8000${department.image}`}
+              src={`https://hospital-erp-xoah.onrender.com${department.image}`}
               alt={department.name}
             />
             <h2>{department.name}</h2>

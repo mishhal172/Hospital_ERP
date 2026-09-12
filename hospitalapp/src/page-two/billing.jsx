@@ -15,7 +15,7 @@ export default function Billings() {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/medicine/")
+        axios.get("https://hospital-erp-xoah.onrender.com/api/medicine/")
             .then(res => setAllMedicines(res.data))
             .catch(err => console.error("Error fetching items", err));
     }, []);
@@ -27,7 +27,7 @@ export default function Billings() {
             setLoading(true);
 
             const res = await axios.get(
-                `http://localhost:8000/api/prescription/${searchId}/`
+                `https://hospital-erp-xoah.onrender.com/api/prescription/${searchId}/`
             );
 
             setSelectedPrescription(res.data);
@@ -99,7 +99,7 @@ export default function Billings() {
 
         try {
             await axios.post(
-                "http://localhost:8000/api/submit-bill/",
+                "https://hospital-erp-xoah.onrender.com/api/submit-bill/",
                 {
                     prescription_id: isPrescriptionMode
                         ? selectedPrescription.id

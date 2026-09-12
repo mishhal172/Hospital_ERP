@@ -42,7 +42,7 @@ export default function TakeAppointment() {
   }, []);
   const fetchPatients = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/patients/");
+      const res = await axios.get("https://hospital-erp-xoah.onrender.com/api/patients/");
       setPatients(res.data);
     } catch (err) {
       console.log(err);
@@ -50,7 +50,7 @@ export default function TakeAppointment() {
   };
   const fetchDepartments = async () => {
     try {
-      const res = await axios.get("http://127.0.0.1:8000/api/departments/");
+      const res = await axios.get("https://hospital-erp-xoah.onrender.com/api/departments/");
       setDepartments(res.data);
     } catch (err) {
       console.log(err);
@@ -75,7 +75,7 @@ export default function TakeAppointment() {
 
     try {
       const res = await axios.get(
-        `http://127.0.0.1:8000/api/departments/${deptId}/doctors/`
+        `https://hospital-erp-xoah.onrender.com/api/departments/${deptId}/doctors/`
       );
       setFilteredDoctors(res.data);
     } catch (err) {
@@ -113,7 +113,7 @@ export default function TakeAppointment() {
 
     try {
       const res = await axios.post(
-        "http://127.0.0.1:8000/api/appointments/",
+        "https://hospital-erp-xoah.onrender.com/api/appointments/",
         {
           patient: formData.patient,
           doctor: formData.doctor,
