@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-24_*t83ex-@afj08cnady8-o63vbc6%3p$#nnp2i&8v927%r8@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -143,6 +143,7 @@ REST_FRAMEWORK = {
 }
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://YOUR-FRONTEND-URL.onrender.com",
 ]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
