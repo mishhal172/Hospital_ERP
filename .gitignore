@@ -1,0 +1,26 @@
+env/
+venv/
+env1/
+node_modules/
+__pycache__/
+*.pyc
+db.sqlite3
+.DS_Store
+build/
+dist/# React
+node_modules/
+build/
+dist/
+
+# Python
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Django
+db.sqlite3
+media/
+
+# Mac
+.DS_Store
