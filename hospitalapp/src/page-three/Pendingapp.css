@@ -1,0 +1,367 @@
+.pending-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2d3748;
+}
+
+.pending-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1a202c;
+}
+.table-wrapper {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead tr {
+    background-color: #3b82f6;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 16px 20px;
+    font-size: 15px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.25s ease;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+    transform: scale(1.01);
+}
+.consult-btn {
+    background-color: #10b981;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.consult-btn:hover {
+    background-color: #059669;
+}
+
+.consult-btn:active {
+    transform: scale(0.97);
+}
+.consult-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.25);
+    transition: left 0.4s ease;
+}
+
+.consult-btn:hover::after {
+    left: 100%;
+}
+.submit-btn {
+    width: 100%;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.2s ease;
+    box-shadow: 0 8px 18px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn:hover {
+    background-color: #2563eb;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+.consultation-page {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    animation: slideUp 0.4s ease;
+}
+.patient-info {
+    background-color: #f1f5f9;
+    border-left: 4px solid #3b82f6;
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.patient-info p {
+    margin: 5px 0;
+    font-size: 15px;
+}
+.consult-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #3b82f6;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #94a3b8;
+}
+.form-group select[multiple] {
+    height: 120px;
+    padding: 8px;
+}
+
+.form-group select[multiple] option {
+    padding: 6px 10px;
+}
+
+.form-group select[multiple] option:checked {
+    background-color: #3b82f6;
+    color: white;
+}
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    color: #64748b;
+    animation: fadeIn 0.4s ease;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+@media (max-width:1000px){
+
+    .pending-container{
+        padding:15px;
+    }
+
+    .table-wrapper{
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    table{
+        min-width:900px;
+    }
+
+    th,
+    td{
+        padding:12px;
+        font-size:14px;
+        white-space:nowrap;
+    }
+
+    .consult-btn{
+        padding:8px 12px;
+        font-size:13px;
+    }
+}
+@media (max-width: 768px) {
+    th, td {
+        padding: 12px 10px;
+        font-size: 13px;
+    }
+
+    .consultation-page {
+        padding: 20px;
+    }
+
+    .patient-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width:600px){
+
+    .pending-container{
+        padding:10px;
+        margin:20px auto;
+    }
+
+    .pending-container h2{
+        font-size:22px;
+        margin-bottom:20px;
+    }
+
+    .table-wrapper{
+        box-shadow:none;
+        background:transparent;
+        overflow:visible;
+    }
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr{
+        display:block;
+        width:100%;
+    }
+
+    thead{
+        display:none;
+    }
+
+    tbody tr{
+        background:#fff;
+        border-radius:12px;
+        padding:12px;
+        margin-bottom:15px;
+        box-shadow:0 5px 15px rgba(0,0,0,.08);
+        border:1px solid #e2e8f0;
+    }
+
+    tbody tr:hover{
+        transform:none;
+    }
+
+    td{
+        border:none;
+        padding:10px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        text-align:right;
+        font-size:14px;
+        border-bottom:1px solid #f1f5f9;
+    }
+
+    td:last-child{
+        border-bottom:none;
+    }
+
+    td::before{
+        font-weight:700;
+        color:#2563eb;
+        text-align:left;
+        margin-right:10px;
+    }
+    .consult-btn{
+        width:100%;
+        margin-top:8px;
+    }
+
+    .consultation-page{
+        padding:15px;
+        border-radius:10px;
+    }
+
+    .patient-info{
+        padding:12px;
+        gap:8px;
+    }
+
+    .patient-info p{
+        font-size:14px;
+    }
+
+    .form-group input,
+    .form-group select{
+        font-size:14px;
+        padding:10px;
+    }
+
+    .submit-btn{
+        padding:12px;
+        font-size:15px;
+    }
+}

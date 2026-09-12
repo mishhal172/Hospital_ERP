@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.medicine-container {
+  width: 90%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+}
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1e293b;
+  font-size: 32px;
+  font-weight: bold;
+}
+.message {
+  text-align: center;
+  margin-bottom: 20px;
+  color: green;
+  font-weight: 600;
+}
+.medicine-form {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(220px, 1fr)
+  );
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.medicine-form input,
+.medicine-form textarea {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.medicine-form textarea {
+  resize: none;
+  min-height: 80px;
+}
+
+.medicine-form input:focus,
+.medicine-form textarea:focus {
+  border-color: #2563eb;
+}
+.add-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.add-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+.medicine-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+.medicine-table th,
+.medicine-table td {
+  border: 1px solid #e5e7eb;
+  padding: 14px;
+  text-align: center;
+}
+.medicine-table th {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-size: 15px;
+}
+.medicine-table tbody tr:hover {
+  background: #f8fafc;
+}
+.medicine-table td:last-child {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 250px;
+}
+.edit-btn,
+.delete-btn,
+.qty-btn {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+.edit-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+}
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover {
+  transform: translateY(-2px);
+}
+
+.qty-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.qty-btn:hover {
+  transform: translateY(-2px);
+}
+
+.qty-btn.minus {
+  background: #ea580c;
+}
+.out-of-stock {
+  color: crimson;
+  font-weight: bold;
+}
+.loading {
+  color: #2563eb;
+  font-weight: bold;
+}
+.not-found {
+  color: gray;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+
+  .medicine-container {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .medicine-form {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-table {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  .medicine-table thead {
+    display: none;
+  }
+
+  .medicine-table,
+  .medicine-table tbody,
+  .medicine-table tr,
+  .medicine-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .medicine-table tr {
+    background: #fff;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+  }
+
+  .medicine-table td {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 14px;
+    text-align: left;
+    word-wrap: break-word;
+  }
+
+  .medicine-table td:last-child {
+    border-bottom: none;
+  }
+
+  .medicine-table td::before {
+    display: block;
+    font-weight: 700;
+    color: #334155;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+  .medicine-table td:nth-child(1)::before {
+    content: "ID";
+  }
+
+  .medicine-table td:nth-child(2)::before {
+    content: "Medicine";
+  }
+
+  .medicine-table td:nth-child(3)::before {
+    content: "Category";
+  }
+
+  .medicine-table td:nth-child(4)::before {
+    content: "Price";
+  }
+
+  .medicine-table td:nth-child(5)::before {
+    content: "Stock";
+  }
+
+  .medicine-table td:nth-child(6)::before {
+    content: "Description";
+  }
+
+  .medicine-table td:nth-child(7)::before {
+    content: "Actions";
+  }
+
+  .medicine-table td:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .qty-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .medicine-container {
+    width: 98%;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .medicine-form input,
+  .medicine-form textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .medicine-table td {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .qty-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}

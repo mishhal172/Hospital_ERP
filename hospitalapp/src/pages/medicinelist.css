@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.medicine-containers{
+    width: 100%;
+
+    padding: 25px;
+
+    animation: pageFade .8s ease;
+}
+.medicine-containers h1{
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    color: #0f172a;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    position: relative;
+}
+
+.medicine-containers h1::after{
+    content: "";
+
+    width: 80px;
+    height: 4px;
+
+    background: #2563eb;
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -10px;
+
+    transform: translateX(-50%);
+
+    border-radius: 10px;
+}
+.medicine-tables{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    animation: tableAppear .8s ease;
+}
+.medicine-tables th{
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+    color: white;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+.medicine-tables td{
+    padding: 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #fafafa;
+
+    transition: .3s;
+}
+.medicine-tables tbody tr{
+    animation: rowFade .5s ease forwards;
+}
+
+.medicine-tables tr:nth-child(even){
+    background: #f8fafc;
+}
+
+.medicine-tables tbody tr:hover{
+    background: #eff6ff;
+    transform: scale(1.01);
+}
+@keyframes pageFade{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tableAppear{
+    from{
+        opacity: 0;
+        transform: scale(.98);
+    }
+
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rowFade{
+    from{
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@media(max-width:768px){
+
+    .medicine-containesr{
+        padding: 15px;
+    }
+
+    .medicine-containers h1{
+        font-size: 24px;
+    }
+
+    .medicine-tables{
+        display: block;
+        overflow-x: auto;
+    }
+
+    .medicine-tables th,
+    .medicine-tables td{
+        padding: 12px;
+        font-size: 14px;
+    }
+}
+@media (max-width:600px){
+
+    .medicine-containers{
+        padding:12px;
+    }
+
+    .medicine-containers h1{
+        font-size:24px;
+        margin-bottom:20px;
+    }
+
+    .medicine-tables,
+    .medicine-tables thead,
+    .medicine-tables tbody,
+    .medicine-tables th,
+    .medicine-tables td,
+    .medicine-tables tr{
+        display:block;
+        width:100%;
+    }
+
+    .medicine-tables{
+        background:transparent;
+        box-shadow:none;
+    }
+
+    .medicine-tables thead{
+        display:none;
+    }
+
+    .medicine-tables tr{
+        background:#fff;
+        margin-bottom:16px;
+        border-radius:16px;
+        padding:10px;
+        box-shadow:0 8px 25px rgba(0,0,0,.08);
+        border:1px solid #e2e8f0;
+    }
+
+    .medicine-tables td{
+        border:none;
+        border-bottom:1px solid #f1f5f9;
+        text-align:left;
+        padding:12px;
+        display:flex;
+        flex-direction:column;
+        gap:4px;
+    }
+
+    .medicine-tables td:last-child{
+        border-bottom:none;
+    }
+
+    .medicine-tables td::before{
+        font-weight:700;
+        color:#2563eb;
+        font-size:13px;
+        text-transform:uppercase;
+    }
+    .medicine-tables td:nth-child(1)::before{
+        content:"ID";
+    }
+
+    .medicine-tables td:nth-child(2)::before{
+        content:"Medicine";
+    }
+
+    .medicine-tables td:nth-child(3)::before{
+        content:"Category";
+    }
+
+    .medicine-tables td:nth-child(4)::before{
+        content:"Price";
+    }
+
+    .medicine-tables td:nth-child(5)::before{
+        content:"Stock";
+    }
+
+    .medicine-tables td:nth-child(6)::before{
+        content:"Description";
+    }
+}

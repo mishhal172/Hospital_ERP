@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bill-history-container {
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    animation: billHistoryAppear .5s ease;
+    background: var(--nav-bg);
+}
+
+.bill-history-title {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #0f172a;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+}
+
+.bill-history-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #2563eb;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+}
+
+.bill-history-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.bill-history-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.bill-history-filter-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.bill-history-filter-group input {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.bill-history-filter-group input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+
+.bill-history-search-btn,
+.bill-history-clear-btn {
+    height: 45px;
+    padding: 0 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .25s;
+}
+
+.bill-history-search-btn {
+    background: #2563eb;
+    color: #fff;
+}
+
+.bill-history-search-btn:hover {
+    background: #1d4ed8;
+}
+
+.bill-history-clear-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.bill-history-clear-btn:hover {
+    background: #cbd5e1;
+}
+
+.bill-history-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 14px;
+}
+
+.bill-history-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.bill-history-table thead th {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.bill-history-table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+
+.bill-history-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.bill-history-table tbody tr:hover {
+    background: #eff6ff;
+}
+
+.bill-history-medicine-item {
+    display: inline-block;
+    margin: 4px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.bill-history-no-data {
+    text-align: center;
+    padding: 40px !important;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+@keyframes billHistoryAppear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .bill-history-container {
+        padding: 12px;
+    }
+
+    .bill-history-title {
+        font-size: 24px;
+    }
+
+    .bill-history-filter-group {
+        min-width: 100%;
+    }
+
+    .bill-history-search-btn,
+    .bill-history-clear-btn {
+        width: 100%;
+    }
+
+    .bill-history-table {
+        min-width: 700px;
+    }
+}

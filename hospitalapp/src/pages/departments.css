@@ -1,0 +1,394 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.departments-container{
+    padding: 40px;
+    background: #f8fafc;
+    min-height: 100vh;
+
+    animation: pageFade .8s ease;
+}
+
+@keyframes pageFade{
+    from{
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.create-dept-section{
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow:
+        0 10px 25px -5px rgba(0,0,0,0.05),
+        0 8px 10px -6px rgba(0,0,0,0.05);
+    margin-bottom: 50px;
+    border: 1px solid #f1f5f9;
+    animation: slideUp .8s ease;
+    transition: .3s;
+}
+
+.create-dept-section:hover{
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 40px rgba(37,99,235,.12);
+}
+
+@keyframes slideUp{
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.create-dept-section h1{
+    font-size: 28px;
+    color: #1e293b;
+    margin-bottom: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+.dept-form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    max-width: 600px;
+}
+
+.dept-form input,
+.dept-form textarea{
+    padding: 14px 18px;
+
+    border: 1.5px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    color: #334155;
+
+    background: white;
+
+    outline: none;
+
+    transition: all .3s ease;
+}
+
+.dept-form input:hover,
+.dept-form textarea:hover{
+    border-color: #60a5fa;
+}
+
+.dept-form input:focus,
+.dept-form textarea:focus{
+    border-color: #2563eb;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,.12);
+}
+
+.dept-form textarea{
+    min-height: 120px;
+    line-height: 1.6;
+}
+.dept-form input[type="file"]{
+    background: #f1f5f9;
+    padding: 10px;
+    cursor: pointer;
+}
+.dept-form button{
+    background: #1e293b;
+
+    color: white;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.dept-form button:hover:not(:disabled){
+    background: #0f172a;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.15);
+}
+
+.dept-form button::before{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.3),
+        transparent
+    );
+
+    transition: .7s;
+}
+
+.dept-form button:hover::before{
+    left: 100%;
+}
+
+.dept-form button:disabled{
+    background: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+.status-message{
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    font-size: 14px;
+
+    background: #ecfdf5;
+
+    color: #059669;
+
+    border: 1px solid #d1fae5;
+
+    display: inline-block;
+
+    animation: fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+hr{
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 40px 0;
+}
+
+.departmentss-grid{
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(300px,1fr));
+
+    gap: 25px;
+}
+.departments-card{
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.08);
+    transition: all .35s ease;
+    opacity: 0;
+    animation: cardAppear .6s ease forwards;
+    justify-content: space-around;
+}
+
+.departments-card:nth-child(1){animation-delay:.1s;}
+.departments-card:nth-child(2){animation-delay:.2s;}
+.departments-card:nth-child(3){animation-delay:.3s;}
+.departments-card:nth-child(4){animation-delay:.4s;}
+.departments-card:nth-child(5){animation-delay:.5s;}
+.departments-card:nth-child(6){animation-delay:.6s;}
+.departments-card:nth-child(7){animation-delay:.7s;}
+.department-scard:nth-child(8){animation-delay:.8s;}
+
+.departments-card:hover{
+    transform: translateY(-8px);
+    box-shadow:
+        0 20px 40px rgba(37,99,235,.15);
+}
+
+@keyframes cardAppear{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.departments-card img{
+    width: 100%;
+    max-width: 400px;
+
+    border-radius: 12px;
+
+    transition: transform .5s ease;
+}
+
+.departments-card:hover img{
+    transform: scale(1.05);
+}
+
+.card-content{
+    padding: 0 20px 20px;
+}
+
+.departments-card h2{
+    font-size: 24px;
+
+    color: #0f172a;
+
+    margin: 20px 0 10px 0;
+
+    text-align: center;
+}
+
+.departments-card p{
+    font-size: 15px;
+
+    color: #475569;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+.delete-btna{
+    width: 100%;
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+
+.delete-btna:hover{
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 16px rgba(239,68,68,.3);
+}
+
+.delete-btna:active{
+    transform: scale(.96);
+}
+
+@media (max-width: 640px) {
+
+    .departments-container{
+        padding: 12px;
+        overflow-x: hidden;
+    }
+
+    .create-dept-section{
+        padding: 18px;
+        margin-bottom: 25px;
+    }
+
+    .create-dept-section h1{
+        font-size: 22px;
+    }
+
+    .dept-form{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .dept-form input,
+    .dept-form textarea,
+    .dept-form button{
+        width: 100%;
+    }
+
+    .departmentss-grid{
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .departments-card{
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .departments-card img{
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .card-content{
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .departments-card h2{
+        font-size: 22px;
+        margin: 12px 0;
+    }
+
+    .departments-card p{
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .delete-btna{
+        width: 100%;
+        padding: 12px;
+    }
+}

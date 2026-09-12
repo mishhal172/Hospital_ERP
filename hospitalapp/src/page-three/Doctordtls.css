@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.profile-containers{
+    width:100%;
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+    display:flex;
+    justify-content:center;
+    align-items:start;
+    padding:20px;
+    animation:fadeBg .8s ease;
+}
+
+.profile-card{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.08);
+    animation:slideUp .6s ease forwards;
+    transition:.3s ease;
+}
+
+.profile-card:hover{
+    transform:translateY(-5px);
+    box-shadow:
+        0 20px 50px rgba(37,99,235,.15);
+}
+
+.profile-card h2{
+    text-align:center;
+
+    margin-bottom:30px;
+
+    color:#0f172a;
+
+    font-size:28px;
+
+    position:relative;
+}
+
+.profile-card h2::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    bottom:-10px;
+
+    transform:translateX(-50%);
+
+    width:70px;
+    height:4px;
+
+    background:#2563eb;
+
+    border-radius:10px;
+}
+
+.profile-row{
+    margin-bottom:18px;
+}
+
+.profile-row span{
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:13px;
+    font-weight:600;
+
+    color:#64748b;
+
+    text-transform:uppercase;
+}
+
+.profile-row p{
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:12px;
+
+    padding:14px;
+
+    color:#0f172a;
+
+    font-size:15px;
+
+    word-break:break-word;
+
+    transition:.3s;
+}
+
+.profile-row p:hover{
+    border-color:#2563eb;
+    background:white;
+}
+
+@keyframes slideUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeBg{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@media (max-width:768px){
+
+    .profile-containers{
+        padding:15px;
+        align-items:flex-start;
+    }
+
+    .profile-card{
+        max-width:100%;
+        padding:25px;
+    }
+
+    .profile-card h2{
+        font-size:24px;
+    }
+}
+@media (max-width:480px){
+
+    .profile-containers{
+        padding:10px;
+        margin-top: 50px;
+    }
+
+    .profile-card{
+        padding:20px;
+        border-radius:15px;
+    }
+
+    .profile-card h2{
+        font-size:20px;
+        margin-bottom:25px;
+    }
+
+    .profile-row span{
+        font-size:12px;
+    }
+
+    .profile-row p{
+        font-size:14px;
+        padding:12px;
+    }
+
+    .profile-card:hover{
+        transform:none;
+    }
+}

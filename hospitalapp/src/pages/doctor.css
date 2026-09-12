@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.doctor-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    animation: pageFade .8s ease;
+}
+
+.doctor-container h2 {
+    color: #0f172a;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.doctor-container h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 80px;
+    height: 4px;
+    background: #2563eb;
+    border-radius: 10px;
+}
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    animation: cardAppear .8s ease;
+}
+.doctor-profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: .3s;
+    border: 1px solid #e2e8f0;
+}
+
+.doctor-profile-card:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, .12);
+}
+.doctor-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.doctor-id-badge {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 3px 10px;
+    border-radius: 6px;
+}
+
+.doctor-dept-tag {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+}
+.doctor-avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.doctor-avatar-img {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f1f5f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: .3s ease;
+}
+
+.doctor-profile-card:hover .doctor-avatar-img {
+    border-color: #2563eb;
+    transform: scale(1.05);
+}
+
+.doctor-avatar-placeholder {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    color: #475569;
+    font-size: 26px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #f1f5f9;
+    transition: .3s;
+}
+
+.doctor-profile-card:hover .doctor-avatar-placeholder {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    color: #2563eb;
+    border-color: #2563eb;
+    transform: scale(1.05);
+}
+.doctor-card-body {
+    margin-bottom: 20px;
+}
+
+.doctor-name {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+}
+
+.doctor-meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed #f1f5f9;
+}
+
+.doctor-meta-item:last-child {
+    border-bottom: none;
+}
+
+.meta-label {
+    color: #64748b;
+    font-weight: 500;
+}
+
+.meta-value {
+    color: #334155;
+    font-weight: 600;
+}
+
+.email-text {
+    font-size: 13px;
+    word-break: break-all;
+}
+.doctor-card-footer {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.doctor-card-footer .delete-btn {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.doctor-card-footer .delete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(239, 68, 68, .3);
+}
+
+.doctor-card-footer .delete-btn:active {
+    transform: scale(.97);
+}
+.loading-state, .not-found-state {
+    text-align: center;
+    padding: 60px;
+    color: #94a3b8;
+    font-size: 16px;
+    font-style: italic;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .04);
+}
+@keyframes pageFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cardAppear {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media(max-width: 600px) {
+    .doctor-container {
+        padding: 15px;
+    }
+
+    .doctor-container h2 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .doctor-container h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .doctor-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
