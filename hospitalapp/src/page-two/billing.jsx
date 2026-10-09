@@ -145,7 +145,7 @@ export default function Billings() {
             </div>
 
             <div className="billing-header-actions">
-                <div className="search-box">
+                <div className="search-boxx">
                     <input
                         type="text"
                         placeholder="Search Prescription ID..."
@@ -216,7 +216,7 @@ export default function Billings() {
                         <b>Customer Phone:</b> {customerPhone}
                     </p>
                     <h3 className="medicine-heading">Prescribed Medicines</h3>
-                    <table className="create-bill-table">
+                    <table className="create-bill-table" id="table-billing">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -246,7 +246,7 @@ export default function Billings() {
                 <div className="bill-section slide-up">
                     <h2>Billing Summary</h2>
                     <div className="table-responsive">
-                        <table className="create-bill-table">
+                        <table className="create-bill-table" id="create-bill">
                             <thead>
                                 <tr>
                                     <th>Medicine</th>

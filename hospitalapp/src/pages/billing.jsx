@@ -82,7 +82,7 @@ export default function SalesHistory() {
       </div>
 
       <div className="bill-history-wrapper">
-        <table className="bill-history-table">
+        <table className="bill-history-table" id="bill-history">
 
           <thead>
             <tr>

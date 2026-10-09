@@ -164,9 +164,9 @@ export default function TakeAppointment() {
 
       <form className="appointment-form" onSubmit={handleSubmit}>
         <h2>Take Appointment</h2>
-        <div className="search-box">
+        <div className="search-box" id="sear-box" >
           <input
-            type="text" className="searching"
+            type="text" className="searching" id="sear"
             placeholder="Search Patient"
             value={search}
             onChange={(e) => setSearch(e.target.value)}

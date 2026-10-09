@@ -89,12 +89,13 @@ body {
 .appointment-form textarea {
     resize: none;
 }
-.search-box {
+#sear-box {
     margin-bottom: 20px;
 }
 
-.searching {
+#sear-box input {
     height: 70px;
+    border: 1px solid;
 }
 .patient-list {
     max-height: 220px;
@@ -239,4 +240,155 @@ body {
     .appointment-form h2 {
         font-size: 20px;
     }
+}
+@media (max-width: 425px) {
+
+    .appointment-containers {
+        padding: 20px 10px;
+    }
+
+    .appointment-form {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .appointment-form h2 {
+        font-size: 19px;
+        margin-bottom: 22px;
+    }
+
+    .appointment-form select,
+    .appointment-form input,
+    .appointment-form textarea {
+        padding: 10px 11px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .search-box {
+        margin-bottom: 14px;
+    }
+
+    .patient-list {
+        max-height: 180px;
+        border-radius: 9px;
+    }
+
+    .patient-item {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .selected-patient {
+        padding: 12px;
+        margin-bottom: 14px;
+        border-radius: 10px;
+    }
+
+    .selected-patient h4 {
+        margin-bottom: 7px;
+        font-size: 14px;
+    }
+    .search-box {
+        margin-bottom: 12px;
+    }
+    .amount-box {
+        padding: 12px;
+        margin-bottom: 14px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .appointment-btn {
+        padding: 11px;
+        font-size: 14px;
+        border-radius: 9px;
+    }
+
+    .appointment-id {
+        margin-top: 14px;
+        padding: 11px;
+        font-size: 13px;
+        border-radius: 9px;
+    }
+}
+@media (max-width: 320px) {
+
+    .appointment-containers {
+        padding: 15px 8px;
+    }
+
+    .appointment-form {
+        padding: 14px;
+        border-radius: 10px;
+    }
+
+    .appointment-form h2 {
+        font-size: 17px;
+        margin-bottom: 18px;
+    }
+
+    .appointment-form select,
+    .appointment-form input,
+    .appointment-form textarea {
+        padding: 8px 9px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        border-radius: 7px;
+    }
+
+    .patient-list {
+        max-height: 150px;
+    }
+
+    .patient-item {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .selected-patient {
+        padding: 10px;
+    }
+
+    .selected-patient h4 {
+        font-size: 13px;
+    }
+
+    .amount-box {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .appointment-btn {
+        padding: 9px;
+        font-size: 13px;
+    }
+
+    .appointment-id {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 425px) {
+
+    #sear-box input{
+        height: 45px;
+        padding: 8px 10px;
+        font-size: 13px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+    }
+
+}
+@media (max-width: 320px) {
+
+    #sear-box input{
+        height: 38px;
+        padding: 7px 9px;
+        font-size: 12px;
+        border-radius: 7px;
+        margin-bottom: 10px;
+    }
+
 }

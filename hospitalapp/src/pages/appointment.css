@@ -81,18 +81,17 @@ body{
     background:#fff;
     border-radius:20px;
 }
-.appointment-table{
+#appointment-table{
     width:100%;
     border-collapse:collapse;
-    min-width:1100px;
     margin-bottom: 30px;
 }
 
-.appointment-table thead{
+#appointment-table thead{
     background:#2563eb;
 }
 
-.appointment-table th{
+#appointment-table th{
     color:#fff;
     padding:18px 14px;
     text-align:center;
@@ -100,18 +99,18 @@ body{
     font-weight:600;
 }
 
-.appointment-table td{
+#appointment-table td{
     padding:18px 14px;
     text-align:center;
     border-bottom:1px solid #e2e8f0;
     color:#334155;
 }
 
-.appointment-table tbody tr{
+#appointment-table tbody tr{
     transition:.3s;
 }
 
-.appointment-table tbody tr:hover{
+#appointment-table tbody tr:hover{
     background:#f8fafc;
 }
 .appointment-status{
@@ -159,6 +158,7 @@ body{
         order:2;
     }
 }
+
 @media(max-width:768px){
 
     .appointment-page{
@@ -183,13 +183,8 @@ body{
         overflow-x:auto;
         border-radius:15px;
     }
-
-    .appointment-table{
-        min-width:900px;
-    }
-
-    .appointment-table th,
-    .appointment-table td{
+    #appointment-table th,
+    #appointment-table td{
         padding:12px;
         font-size:14px;
     }
@@ -219,5 +214,78 @@ body{
     .filter-button{
         padding:12px;
         font-size:14px;
+    }
+}
+@media (max-width: 900px) {
+
+    .appointment-table-box{
+        background: transparent;
+        overflow: visible;
+    }
+
+    #appointment-table,
+    #appointment-table thead,
+    #appointment-table tbody,
+    #appointment-table th,
+    #appointment-table td,
+    #appointment-table tr{
+        display: block;
+        width: 100%;
+    }
+
+    #appointment-table thead{
+        display: none;
+    }
+
+    #appointment-table tr{
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    #appointment-table td{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    #appointment-table td:last-child{
+        border-bottom: none;
+    }
+
+    #appointment-table td::before{
+        font-weight: 600;
+        color: #0f172a;
+        text-align: left;
+    }
+
+    /* Change labels according to your table columns */
+    #appointment-table td:nth-child(1)::before{
+        content: "Patient";
+    }
+
+    #appointment-table td:nth-child(2)::before{
+        content: "Doctor";
+    }
+
+    #appointment-table td:nth-child(3)::before{
+        content: "Department";
+    }
+
+    #appointment-table td:nth-child(4)::before{
+        content: "Date";
+    }
+
+    #appointment-table td:nth-child(5)::before{
+        content: "Time";
+    }
+
+    #appointment-table td:nth-child(6)::before{
+        content: "Status";
     }
 }

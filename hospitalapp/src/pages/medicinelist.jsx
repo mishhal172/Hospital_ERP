@@ -36,7 +36,7 @@ export default function Medicinelist() {
             {loading ? (
                 <p>Loading...</p>
             ) : (
-                <table className="medicine-tables">
+                <table className="medicine-tables" id="medicine-table">
 
                     <thead>
                         <tr>

@@ -6,14 +6,16 @@
 
 .bill-history-container {
     width: 100%;
-    background: #fff;
     border-radius: 16px;
     padding: 20px;
     margin-top: 70px;
     margin-bottom: 70px;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
     animation: billHistoryAppear .5s ease;
-    background: var(--nav-bg);
+    background: var(--nav-bg, #ffffff);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bill-history-title {
@@ -23,6 +25,8 @@
     font-size: 32px;
     font-weight: 700;
     position: relative;
+    color: #1e293b;
+    letter-spacing: .5px;
 }
 
 .bill-history-title::after {
@@ -109,15 +113,18 @@
     width: 100%;
     overflow-x: auto;
     border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.05);
 }
 
-.bill-history-table {
+#bill-history {
     width: 100%;
-    min-width: 800px;
     border-collapse: collapse;
+    table-layout: auto;
+    overflow: hidden;
+    border-radius: 14px;
 }
 
-.bill-history-table thead th {
+#bill-history thead th {
     background: linear-gradient(
         135deg,
         #2563eb,
@@ -129,21 +136,29 @@
     font-size: 14px;
 }
 
-.bill-history-table td {
+#bill-history td {
     padding: 14px;
     text-align: center;
     border-bottom: 1px solid #e2e8f0;
     color: #334155;
+    word-break: break-word;
+    white-space: normal;
 }
 
-.bill-history-table tbody tr:nth-child(even) {
+#bill-history tbody tr:nth-child(even) {
     background: #f8fafc;
 }
 
-.bill-history-table tbody tr:hover {
+#bill-history tbody tr:hover {
     background: #eff6ff;
 }
+#bill-history thead th:first-child {
+    border-top-left-radius: 14px;
+}
 
+#bill-history thead th:last-child {
+    border-top-right-radius: 14px;
+}
 .bill-history-medicine-item {
     display: inline-block;
     margin: 4px;
@@ -173,27 +188,121 @@
         transform: translateY(0);
     }
 }
-
 @media (max-width: 768px) {
-
-    .bill-history-container {
-        padding: 12px;
+    .bill-history-wrapper {
+        overflow: visible;
     }
 
-    .bill-history-title {
-        font-size: 24px;
+    #bill-history {
+        width: 100%;
+        display: block;
+    }
+    #bill-history thead {
+        display: none;
     }
 
-    .bill-history-filter-group {
-        min-width: 100%;
-    }
-
-    .bill-history-search-btn,
-    .bill-history-clear-btn {
+    #bill-history tbody {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
         width: 100%;
     }
 
-    .bill-history-table {
-        min-width: 700px;
+    #bill-history tr {
+        display: block;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 12px 16px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    #bill-history td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #f1f5f9;
+        text-align: right;
+    }
+
+    #bill-history td:last-child {
+        border-bottom: none;
+    }
+    .bill-history-container{
+        margin-top: 0px;
+    }
+}
+@media (max-width: 900px) {
+
+    .bill-history-wrapper {
+        overflow: visible;
+        box-shadow: none;
+    }
+
+    #bill-history,
+    #bill-history thead,
+    #bill-history tbody,
+    #bill-history th,
+    #bill-history td,
+    #bill-history tr {
+        display: block;
+        width: 100%;
+    }
+
+    #bill-history thead {
+        display: none;
+    }
+
+    #bill-history tr {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+    }
+
+    #bill-history td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: right;
+        padding: 12px 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    #bill-history td:last-child {
+        border-bottom: none;
+    }
+
+    #bill-history td::before {
+        font-weight: 600;
+        color: #0f172a;
+        text-align: left;
+        margin-right: 15px;
+    }
+    #bill-history td:nth-child(1)::before {
+        content: "Patient";
+    }
+
+    #bill-history td:nth-child(2)::before {
+        content: "Doctor";
+    }
+
+    #bill-history td:nth-child(3)::before {
+        content: "Medicines";
+    }
+
+    #bill-history td:nth-child(4)::before {
+        content: "Amount";
+    }
+
+    #bill-history td:nth-child(5)::before {
+        content: "Date";
+    }
+
+    #bill-history td:nth-child(6)::before {
+        content: "Status";
     }
 }

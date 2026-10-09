@@ -13,7 +13,7 @@
     margin-bottom: 30px;
     color: #1a202c;
 }
-.table-wrapper {
+#table-pending {
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
@@ -21,24 +21,24 @@
     margin-bottom: 30px;
 }
 
-table {
+#table-pending table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
 }
 
-thead tr {
+#table-pending tr {
     background-color: #3b82f6;
     color: #ffffff;
     font-weight: 600;
 }
 
-th, td {
+#table-pending th, td {
     padding: 16px 20px;
     font-size: 15px;
 }
 
-tbody tr {
+#table-pending tr {
     border-bottom: 1px solid #e2e8f0;
     transition: all 0.25s ease;
 }
@@ -47,9 +47,10 @@ tbody tr:last-child {
     border-bottom: none;
 }
 
-tbody tr:hover {
+#table-pending tr:hover {
     background-color: #f8fafc;
     transform: scale(1.01);
+    color: rgba(0, 0, 0, 0.408);
 }
 .consult-btn {
     background-color: #10b981;
@@ -212,64 +213,12 @@ tbody tr:hover {
         padding:15px;
     }
 
-    .table-wrapper{
-        overflow-x:auto;
-        -webkit-overflow-scrolling:touch;
-    }
-
-    table{
-        min-width:900px;
-    }
-
-    th,
-    td{
-        padding:12px;
-        font-size:14px;
-        white-space:nowrap;
-    }
-
     .consult-btn{
         padding:8px 12px;
         font-size:13px;
     }
 }
-@media (max-width: 768px) {
-    th, td {
-        padding: 12px 10px;
-        font-size: 13px;
-    }
-
-    .consultation-page {
-        padding: 20px;
-    }
-
-    .patient-info {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@media (max-width:600px){
+@media (max-width:900px){
 
     .pending-container{
         padding:10px;
@@ -277,69 +226,109 @@ tbody tr:hover {
     }
 
     .pending-container h2{
-        font-size:22px;
+        font-size:24px;
         margin-bottom:20px;
     }
 
-    .table-wrapper{
+    #table-pending{
         box-shadow:none;
         background:transparent;
         overflow:visible;
     }
 
-    table,
-    thead,
-    tbody,
-    th,
-    td,
-    tr{
+    /* Convert table to cards */
+    #table-pending table,
+    #table-pending tbody,
+    #table-pending tr,
+    #table-pending td{
         display:block;
         width:100%;
     }
 
-    thead{
+    /* Hide table header */
+    #table-pending thead{
         display:none;
     }
 
-    tbody tr{
-        background:#fff;
-        border-radius:12px;
-        padding:12px;
-        margin-bottom:15px;
+    /* Each appointment becomes a box */
+    #table-pending tbody tr{
+        background:#ffffff;
+        border-radius:14px;
+        padding:15px;
+        margin-bottom:16px;
         box-shadow:0 5px 15px rgba(0,0,0,.08);
         border:1px solid #e2e8f0;
     }
 
-    tbody tr:hover{
+    #table-pending tbody tr:hover{
         transform:none;
+        background:#ffffff;
+        color:#2d3748;
     }
 
-    td{
-        border:none;
-        padding:10px;
+    /* Each row inside the card */
+    #table-pending td{
         display:flex;
-        justify-content:space-between;
+        justify-content:flex-start;
         align-items:center;
-        text-align:right;
+        gap:25px;
+        padding:11px 5px;
         font-size:14px;
+        color:#334155;
+        text-align:left;
         border-bottom:1px solid #f1f5f9;
+        white-space:normal;
     }
 
-    td:last-child{
+    #table-pending td:last-child{
         border-bottom:none;
     }
 
-    td::before{
+    /* Labels */
+    #table-pending td::before{
         font-weight:700;
         color:#2563eb;
         text-align:left;
-        margin-right:10px;
-    }
-    .consult-btn{
-        width:100%;
-        margin-top:8px;
+        min-width:75px;
+        flex-shrink:0;
     }
 
+    #table-pending td:nth-child(1)::before{
+        content:"Date";
+    }
+
+    #table-pending td:nth-child(2)::before{
+        content:"ID";
+    }
+
+    #table-pending td:nth-child(3)::before{
+        content:"Name";
+    }
+
+    #table-pending td:nth-child(4)::before{
+        content:"Age";
+    }
+
+    #table-pending td:nth-child(5)::before{
+        content:"Gender";
+    }
+
+    #table-pending td:nth-child(6)::before{
+        content:"Phone";
+    }
+
+    #table-pending td:nth-child(7)::before{
+        content:"Action";
+    }
+
+    .consult-btn{
+        width:auto;
+        margin-top:0;
+        padding:7px 14px;
+        font-size:13px;
+    }
+
+    /* Consultation page */
     .consultation-page{
         padding:15px;
         border-radius:10px;

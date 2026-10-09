@@ -199,7 +199,7 @@ export default function MedicineManagement() {
                 </button>
             </form>
 
-            <table className="medicine-table">
+            <table className="medicine-table" id="medicne-med">
                 <thead>
                     <tr>
                         <th>Name</th>

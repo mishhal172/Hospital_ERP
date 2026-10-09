@@ -58,7 +58,7 @@ function Appointment() {
         </div>
 
         <div className="appointment-table-box">
-          <table className="appointment-table">
+          <table className="appointment-table" id="appointment-table">
             <thead>
               <tr>
                 <th>ID</th>

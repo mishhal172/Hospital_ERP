@@ -155,3 +155,65 @@ body {
         font-size: 20px;
     }
 }
+@media (max-width: 425px) {
+
+    .patient-containers {
+        padding: 20px 10px;
+    }
+
+    .patient-form {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    .patient-form h2 {
+        font-size: 19px;
+        margin-bottom: 22px;
+    }
+
+    .patient-form input,
+    .patient-form select,
+    .patient-form textarea {
+        padding: 10px 11px;
+        margin-bottom: 12px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .patient-form textarea {
+        min-height: 75px;
+    }
+
+    .patient-btn {
+        padding: 11px;
+        font-size: 14px;
+        border-radius: 9px;
+    }
+}
+@media (max-width: 320px) {
+
+    .patient-containers {
+        padding: 15px 8px;
+    }
+
+    .patient-form {
+        padding: 14px;
+    }
+
+    .patient-form h2 {
+        font-size: 17px;
+    }
+
+    .patient-form input,
+    .patient-form select,
+    .patient-form textarea {
+        padding: 8px 9px;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+
+    .patient-btn {
+        padding: 9px;
+        font-size: 13px;
+    }
+}

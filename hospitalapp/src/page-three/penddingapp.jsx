@@ -186,7 +186,7 @@ function PendingAppointments() {
                                 <p>You are all caught up.</p>
                             </div>
                         ) : (
-                            <div className="table-wrapper">
+                            <div className="table-wrapper" id="table-pending">
                                 <table>
                                     <thead>
                                         <tr>
