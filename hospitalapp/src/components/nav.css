@@ -58,8 +58,8 @@
 }
 
 .nav-left img {
-    width: 42px;
-    height: 42px;
+    width: 82px;
+    height: 82px;
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.3s ease;
@@ -76,7 +76,7 @@
 }
 
 .nav-left h2 {
-    font-size: 22px;
+    font-size: 42px;
     font-weight: bold;
     color: #0f172a;
     position: relative;
@@ -88,7 +88,7 @@
 }
 
 .navbar p {
-    font-size: 15px;
+    font-size: 25px;
     font-style: italic;
     color: #475569;
     animation: fadeInText 1.2s ease;

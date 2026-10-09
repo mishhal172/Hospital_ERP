@@ -269,6 +269,7 @@
         align-items: center;
         text-align: right;
         padding: 12px 0;
+        flex-wrap: wrap;
         border-bottom: 1px solid #e2e8f0;
     }
 
@@ -283,26 +284,26 @@
         margin-right: 15px;
     }
     #bill-history td:nth-child(1)::before {
-        content: "Patient";
-    }
-
-    #bill-history td:nth-child(2)::before {
-        content: "Doctor";
-    }
-
-    #bill-history td:nth-child(3)::before {
-        content: "Medicines";
-    }
-
-    #bill-history td:nth-child(4)::before {
-        content: "Amount";
-    }
-
-    #bill-history td:nth-child(5)::before {
         content: "Date";
     }
 
+    #bill-history td:nth-child(2)::before {
+        content: "Patient";
+    }
+
+    #bill-history td:nth-child(3)::before {
+        content: "Doctor";
+    }
+
+    #bill-history td:nth-child(4)::before {
+        content: "Medicines";
+    }
+
+    #bill-history td:nth-child(5)::before {
+        content: "DoctorFee";
+    }
+
     #bill-history td:nth-child(6)::before {
-        content: "Status";
+        content: 'total Amount';
     }
 }
